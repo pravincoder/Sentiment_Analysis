@@ -64,7 +64,7 @@ export default function MyPage() {
         </h1>
         <p className={styles.tagline}>
           <span className={styles.animatedText}>Effortless</span>,{' '}
-          <span className={styles.animatedText}>AI-Driven</span> Sentiment Reviews Analysis
+          <span className={styles.animatedText}>AI-Driven</span> Sentiment Reviews Scorer
         </p>
       </motion.header>
 

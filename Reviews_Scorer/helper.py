@@ -14,6 +14,15 @@ def clean_data(data):
     data=data.map(lambda x: re.sub(r'[^\x00-\x7F]+',' ', x))
     # Remove leading and trailing whitespaces
     data=data.map(lambda x: x.strip() if isinstance(x, str) else x)
+
+    # Set the data to review  or Review column which ever is present
+    if 'review' in data.columns:
+        data = data['review']
+    elif 'Review' in data.columns:
+        data = data['Review']
+    else:
+        raise ValueError("No column named 'review' or 'Review' found in the data")    
+    
     return data
 
 
