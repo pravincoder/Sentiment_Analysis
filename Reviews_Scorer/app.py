@@ -3,12 +3,13 @@ from flask_cors import CORS
 import logging
 from crew import score_reviews
 import pandas as pd
+from helper import to_json
 app = Flask(__name__)
 
 CORS(app)
 
 # Config the logger
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 @app.route('/score_reviews', methods=['POST'])
 def score_reviews_route():
@@ -19,6 +20,7 @@ def score_reviews_route():
         try:
             # Read the CSV file into a DataFrame
             data = pd.read_csv(file)
+            data = to_json(data)
         except Exception as e:
             logging.error(f"Error reading CSV: {e}")
             return jsonify({'error': 'Error reading CSV file'}), 500
@@ -26,6 +28,7 @@ def score_reviews_route():
         try:
             # Read the Excel file into a DataFrame
             data = pd.read_excel(file)
+            data = to_json(data)
         except Exception as e:
             logging.error(f"Error reading XLSX: {e}")
             return jsonify({'error': 'Error reading Excel file'}), 500

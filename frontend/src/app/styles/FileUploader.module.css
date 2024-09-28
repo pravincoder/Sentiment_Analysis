@@ -1,0 +1,44 @@
+.uploader {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  .uploader:hover {
+    border-color: #666;
+  }
+  
+  .fileList {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .fileItem {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .removeButton {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .removeButton:hover {
+    background-color: #e60000;
+  }
+  

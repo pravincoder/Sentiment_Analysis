@@ -1,10 +1,9 @@
 import os
-import logging
 from langchain_groq import ChatGroq
 from crewai import Agent, Task, Crew, Process
 from dotenv import load_dotenv
 from textwrap import dedent
-from helper import to_json
+from helper import clean_data
 load_dotenv()
 # Load the LLM with the correct API key
 llm = ChatGroq(model="llama-3.1-70b-versatile", api_key=os.getenv('GROQ_API_KEY'))
@@ -19,7 +18,6 @@ def score_reviews(data):
         scored_reviews: CrewAI Output object with the scored reviews
     """
     # Define the agent
-    logging.info("Initiating the crew")
     agent = Agent(
         role="csv_agent",
         goal="Read the reviews and provide a score for each review",
@@ -66,8 +64,9 @@ def score_reviews(data):
 
     # Run the crew
     result = csv_crew.kickoff()
-    logging.info("Crew executed successfully!")
-    return result
+    
+    return str(result)
+
 
 
 
