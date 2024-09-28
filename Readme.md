@@ -2,6 +2,10 @@
 
 This project implements sentiment analysis for customer reviews using Groq LLMs. The project is structured into two main components: a backend service implemented with Python's Poetry (located in the `review_scorer` folder) and a frontend application built using NestJS (located in the `frontend` folder).
 
+Demo :- 
+
+https://github.com/user-attachments/assets/7f6f1d17-c055-46b9-a2e0-a65b98f83642
+
 ## Table of Contents
 
 - [Installation](#installation)
