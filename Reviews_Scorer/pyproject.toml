@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "Reviews_Scorer"
+version = "0.1.0"
+description = "A Sentiment Analysis app that scores reviews using Groq LLMs "
+authors = ["Pravin <PravinCoder@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<3.13"
+python-dotenv = "1.0.0"
+crewai-tools = "^0.4.26"
+ollama = "^0.2.1"
+crewai = "^0.41.1"
+langchain-groq = "^0.1.9"
+flask = "^3.0.3"
+flask-cors = "^5.0.0"
+
+[tool.pyright]
+# https://github.com/microsoft/pyright/blob/main/docs/configuration.md
+useLibraryCodeForTypes = true
+exclude = [".cache"]
+
+
+[tool.ruff]
+# https://beta.ruff.rs/docs/configuration/
+select = ['E', 'W', 'F', 'I', 'B', 'C4', 'ARG', 'SIM']
+ignore = ['W291', 'W292', 'W293']
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
