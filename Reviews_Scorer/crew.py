@@ -8,8 +8,6 @@ load_dotenv()
 # Load the LLM with the correct API key
 llm = ChatGroq(model="llama-3.1-70b-versatile", api_key=os.getenv('GROQ_API_KEY'))
 
-
-
 def score_reviews(data):
     """ Score the reviews based on the sentiment
     Args:
@@ -66,11 +64,3 @@ def score_reviews(data):
     result = csv_crew.kickoff()
     
     return str(result)
-
-
-
-
-
-
-
-

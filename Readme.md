@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/7f6f1d17-c055-46b9-a2e0-a65b98f83642
   - [Getting Started](#getting-started-1)
   - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
+- [Contact](#Contact)
 
 ## Installation
 
@@ -112,7 +112,7 @@ Contributions are welcome! Please follow these steps to contribute:
 5. Push to the branch (git push origin feature/YourFeature).
 6. Open a Pull Request.
 
-## Contact
+# Contact
 
 If you have any questions, suggestions, or would like to collaborate, feel free to reach out:
 

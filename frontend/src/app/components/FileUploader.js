@@ -1,6 +1,5 @@
 import { useDropzone } from 'react-dropzone';
 import { useState } from 'react';
-import styles from '../styles/FileUploader.module.css';
 
 const FileUploader = ({ onFileUpload }) => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -23,16 +22,24 @@ const FileUploader = ({ onFileUpload }) => {
   };
 
   return (
-    <div {...getRootProps()} className={styles.uploader}>
+    <div 
+      {...getRootProps()} 
+      className="border-2 border-dashed border-gray-300 p-6 rounded-lg cursor-pointer text-center transition hover:border-gray-600"
+    >
       <input {...getInputProps()} />
-      <p>Drag & drop a CSV or XLSX file here, or click to select one</p>
+      <p className="text-gray-500">Drag & drop a CSV or XLSX file here, or click to select one</p>
 
       {/* Display the uploaded file */}
       {selectedFile && (
-        <ul className={styles.fileList}>
-          <li className={styles.fileItem}>
+        <ul className="list-none mt-4">
+          <li className="bg-gray-50 p-4 rounded-lg shadow-md flex justify-between items-center">
             {selectedFile.name}
-            <button onClick={handleRemoveFile} className={styles.removeButton}>Remove</button>
+            <button 
+              onClick={handleRemoveFile} 
+              className="bg-red-500 text-white p-2 rounded-md hover:bg-red-600 transition"
+            >
+              Remove
+            </button>
           </li>
         </ul>
       )}
